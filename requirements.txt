@@ -6,6 +6,6 @@ keras
 opencv-python
 numpy
 matplotlib
-PIL
-keras
-tensorflow
+Pillow
+keras==2.15.0
+tensorflow==2.15.0
