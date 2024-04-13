@@ -11,7 +11,7 @@ from keras.models import load_model
 from keras.layers import Rescaling
 import matplotlib.pyplot as plt
 labels = pickle.load(open("LE.pkl", "rb"))
-model = load_model("model3.h5")
+model = load_model("model.h5")
 app = Flask(__name__)
 CORS(app)
 
