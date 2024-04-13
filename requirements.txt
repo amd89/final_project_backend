@@ -9,3 +9,5 @@ matplotlib
 Pillow
 keras
 tensorflow-cpu
+gunicorn
+pandas
