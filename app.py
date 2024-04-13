@@ -12,8 +12,6 @@ from keras.layers import Rescaling
 import matplotlib.pyplot as plt
 labels = pickle.load(open("LE.pkl", "rb"))
 model = load_model("model.h5")
-app = Flask(__name__)
-CORS(app)
 
 lesion_types = {
     'akiec': 'Actinic Keratoses',
@@ -24,7 +22,8 @@ lesion_types = {
     'nv': 'Melanocytic Nevi',
     'vasc': 'Vascular Lesions'
 }
-
+app = Flask(__name__)
+CORS(app)
 @app.route('/', methods=["GET"])
 @cross_origin()
 def serve():
@@ -46,6 +45,3 @@ def image_check():
 
     #print(classes[index])
     return jsonify({'result': lesion_types[type_of_lesion[0]]})
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
